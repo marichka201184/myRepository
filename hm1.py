@@ -2,9 +2,8 @@
 # наприклад:
 
 st = 'as 23 fdfdg544'
-
 st1 = []
-k = [st1.append(i) if i.isdigit() else print() for i in st]
+k = [st1.append(i) for i in st if i.isdigit()]
 print(st1)
 
 #################################################################################
@@ -13,6 +12,15 @@ print(st1)
 # наприклад:
 st2 = 'as 23 fdfdg544 34'  # введена строка
 # 23, 544, 34  # вивело в консолі
+
+result = ''
+for ch in st:
+    if ch.isdecimal():
+        result += ch
+    else:
+        result += " "
+result = ', '.join(result.split())
+print(result)
 #################################################################################
 # 3)прога, що виводить кількість кожного символа з введеної строки, наприклад:
 st3 = 'as 23 fdfdg544'
@@ -21,10 +29,7 @@ st = []
 for i in st3:
     k = i + '->' + str(st3.count(i))
     st.append(k)
-    st1 = list(set(st))
-print(st1)
-
-for s in st1:
+for s in list(set(st)):
     print(s)
 
 # 2 часть(list comprehension):
@@ -41,11 +46,8 @@ print(st1)
 # 2) с диапазона от 0-50 записать в лист только не парные числа, при этом возвести их в квадрат
 # пример:
 # [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, ...]
-l1 = [i for i in range(50)]
+l1 = [i*i for i in range(1,50,2)]
 print(l1)
-k1 = []
-k = [k1.append(i * i) if i % 2 != 0 else print() for i in l1]
-print(k1)
 
 # 3)  есть лист:
 numbers = [1, 2, 3, 4, 5, 6, 7, 8]
@@ -56,18 +58,8 @@ l1 = ['LT' if i <= 4 else 'GT' for i in numbers]
 print(l1)
 
 # 4) есть два листа:
-
+# записать в лист тюплы(x, y) если x + y == 0 пример: [(1, -1), (2, -2), (5, -5)]
 list1 = [1, 2, 3, 4, 5]
 list2 = [-1, 7, 10, -5, -2]
-k1 = []
-g1 = []
-
-# записать в лист тюплы(x, y) если x + y == 0 пример: [(1, -1), (2, -2), (5, -5)]
-for i in list1:
-    for j in list2:
-        if i + j == 0:
-            g = [g1.append(i)]
-            g = [g1.append(j)]
-            k= [k1.append(tuple([i,j]))]
-
+k1=[(x,y) for x in list1 for y in list2 if x+y==0]
 print(k1)
