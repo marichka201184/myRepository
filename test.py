@@ -1,46 +1,35 @@
-class Human:
+class Letter:
+    # 3) створити змінну класу __count.
+    __count = 0
 
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
+    # 4) при створенні об'єкта має створюватись змінна об'єкта(пропертя) __text, для цієї змінної мають бути гетер і сетер
+    def __init__(self, text):
+        self.__text = text
 
     def __str__(self):
-        return f'{self.name} - {self.age} '
-
-    def __repr__(self):
-        return f'{self.name} - {self.age} '
+        return f'{self.__dict__}'
 
 
-class Cinderella(Human):
-    def __init__(self, name, age, size):
-        super().__init__(name, age)
-        self.size = size
-
-    def __repr__(self):
-        return f'Name-{self.name} Age- {self.age} Size-{self.size}'
+def get_text(self):
+    return self.__text
 
 
-l = [Cinderella('Anna', 20, 37), Cinderella('Kate', 25, 35), Cinderella('Ira', 19, 36)]
-
-print(l)
-
-
-class Prince(Human):
-    def __init__(self, name, age, size_c):
-        super().__init__(name, age)
-        self.size_c = size_c
-
-    def __repr__(self):
-        return f'Name-{self.name} Age- {self.age} Size of Cinderella-{self.size_c}'
-
-    def find(self, list):
-        for i in list:
-            if i.size == self.size_c:
-                print(f'It is my cinderella - {i.name}')
-                break
+def set_text(self, text):
+    self.__text = text
 
 
-prince = Prince('Vova', 30, 35)
-print(prince)
+def cnt(self):
+    self.__count += 1
+    return self.__count
 
-prince.find(l)
+
+# 5) при створені об'єкта __count має збільшуватися на 1
+# 6) має бути метод(метод класу) для виводу __сount
+
+
+# 7) має бути метод який записує в наш ліст текст з нашої змінної __text
+let1 = Letter('abcd')
+let1.cnt()
+print(let1.count)
+let2 = Letter('abcd')
+print(let2)
