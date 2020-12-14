@@ -37,6 +37,7 @@ check(file_list.get_file())
 
 
 def wright(text, l):
+    print('List of files')
     for i in l:
         print(i)
     choice = input('select a file: ')
@@ -50,3 +51,51 @@ def wright(text, l):
 
 
 wright('ABCDEFG', file_list.get_file())
+wright('1234567', file_list.get_file())
+
+
+def show_text(l):
+    print('List of files')
+    for i in l:
+        print(i)
+    choice = input('select a file for showing: ')
+    print(choice)
+    f1 = open(choice, 'r')
+    f = f1.read()
+    print(f)
+
+
+show_text(file_list.get_file())
+show_text(file_list.get_file())
+
+
+def replace(l):
+    print('List of files')
+    for i in l:
+        print(i)
+    choice1 = input('select first file: ')
+    print(choice1)
+    f1 = open(choice1, 'r')
+    f = f1.read()
+    print(f)
+    choice2 = input('select second file: ')
+    print(choice2)
+    f2 = open(choice2, 'r')
+    t = f2.read()
+    print(t)
+
+    new_text = open(choice1, 'w')
+    new_text.write(t)
+    new_text.close()
+    new_text = open(choice1, 'r')
+    nw = new_text.read()
+    print(nw)
+    new_text1 = open(choice2, 'w')
+    new_text1.write(f)
+    new_text1.close()
+    new_text1 = open(choice2, 'r')
+    nw1 = new_text1.read()
+    print(nw1)
+
+
+replace(file_list.get_file())
