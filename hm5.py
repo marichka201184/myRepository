@@ -87,13 +87,13 @@ class Letter:
     def add(self, l):
         l.append(self.__text)
         return l
+
     # 5) при створені об'єкта __count має збільшуватися на 1
     # 6) має бути метод(метод класу) для виводу __сount
 
-
-@classmethod
-def cnt(cls):
-    print(f'cont: {cls.__count}')
+    @classmethod
+    def cnt(cls):
+        print(f'cont: {cls.__count}')
 
 
 let1 = Letter('abcd')
